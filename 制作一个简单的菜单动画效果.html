@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    h3 {
+      font-size: 20px;
+      color: #6a6a6a;
+      transition: all .3s;
+      position: relative;
+      width: 100px;
+      text-align: center;
+      padding: 10px 0;
+      -moz-transition: all .3s;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+    }
+
+    h3 span {
+      content: "";
+      height: 4px;
+      width: 0px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      background: blue;
+      transform: translateX(-50%);
+      transition: all .3s;
+      -moz-transition: all .3s;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+    }
+
+    .underline {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>前端学院
+      <span></span>
+    </h3>
+    <button>点击切换</button>
+  </div>
+  <script>
+    var query = function (clsname) {
+      return document.querySelector(clsname)
+    }
+    var btn = query("button"),
+      span = query("span"),
+      h3 = query('h3'),
+      boolean = true;
+
+    btn.addEventListener('click', function () {
+      if (boolean) {
+        span.classList.add('underline')
+        h3.style.color = "blue"
+
+      } else {
+        span.classList.remove('underline')
+        h3.style.color = "#6a6a6a"
+      }
+      boolean = !boolean
+    })
+  </script>
+</body>
+
+</html>
